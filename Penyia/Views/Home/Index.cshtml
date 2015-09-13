@@ -1,20 +1,21 @@
-﻿@{
-    Layout = null;
-}
+﻿@{ViewBag.Title = "Index";}
+@model List<Penyia.Models.Student>
 
-<!DOCTYPE html>
+<div>
+    <h1>@{var name = "Arun";}</h1>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link rel="stylesheet" href="~/Content/bootstrap.css">
-    <script src="~/Scripts/jquery-2.1.4.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-</head>
-<body>
-    <div>
-        <h1>Welcome to Penyia project</h1>
-    </div>
-</body>
-</html>
+    <p>@name</p>
+
+    @foreach (var item in Model)
+    {
+        <br />
+        <span>@item.FirstMidName</span>
+    }
+
+    @if (name.Length > 2)
+    {
+        <p>Hello</p>
+    }
+
+
+</div>

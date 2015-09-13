@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Penyia.DataAccess;
+using Penyia.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,8 +15,34 @@ namespace Penyia.Controllers
 
         public ActionResult Index()
         {
+
+           
+            using (ScoolContext context = new ScoolContext())
+            {
+
+                //context.Connection.Open();
+                var students = context.Students.ToList();
+
+                foreach (Student s in students)
+                {
+                    Console.Write(s.LastName);
+                }
+
+                Console.Write("student added");
+
+                return View(students);
+                
+            }
+
+            
+        }
+
+        public ActionResult About()
+        {
             return View();
         }
+
+
 
     }
 }
