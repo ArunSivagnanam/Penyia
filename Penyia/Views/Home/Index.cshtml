@@ -1,5 +1,4 @@
 ﻿@{ViewBag.Title = "Index";}
-@model List<Penyia.Models.Student>
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -47,20 +46,7 @@
 </header>
 
 <div>
-    <h1>@{var name = "Arun";}</h1>
-
-    <p>@name</p>
-
-    @foreach (var item in Model)
-    {
-        <br />
-        <span>@item.FirstMidName</span>
-    }
-
-    @if (name.Length > 2)
-    {
-        <p>Hello</p>
-    }
+    
 
 
 </div>

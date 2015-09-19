@@ -2,6 +2,7 @@
 using Penyia.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,22 +17,22 @@ namespace Penyia.Controllers
         public ActionResult Index()
         {
 
-           
-            using (ScoolContext context = new ScoolContext())
+            using (PenyiaContext context = new PenyiaContext())
             {
 
+                /*
                 //context.Connection.Open();
-                var students = context.Students.ToList();
+                var users = context.Users.ToList();
 
-                foreach (Student s in students)
+                foreach (User u in users)
                 {
-                    Console.Write(s.LastName);
+                    Console.Write(u.LastName);
                 }
 
-                Console.Write("student added");
-
-                return View(students);
-                
+                Console.Write("user added");
+                 */
+                return View();
+               
             }
 
             
@@ -39,6 +40,37 @@ namespace Penyia.Controllers
 
         public ActionResult About()
         {
+
+            Test t = new Test(5)
+            {
+                cat = "cat",
+                dog = "dog"
+
+            };
+
+            t.optional(5);
+
+
+            // casting
+
+            SpecialTest sp = new SpecialTest();
+
+
+            Test y = sp as Test;
+
+            if (y != null)
+            {
+                Debug.WriteLine("not null");
+            }
+
+            if (sp is Test)
+            {
+                Debug.WriteLine("sp is a Test");
+            }
+
+
+
+
             return View();
         }
 
