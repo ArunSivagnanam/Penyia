@@ -32,12 +32,10 @@ namespace Penyia.Models
         public string Password { get; set; }
 
         [NotMapped]
-        public Status UserState { get; set; }
+        public Status? UserState { get; set; }
 
         // Navigation property
         public virtual ICollection<Message> MessageHistory { get; set; } 
-
-
 
 
     }
